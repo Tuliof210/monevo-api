@@ -18,7 +18,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: "1.25" # ATUALIZADO: Alinhado com seu go.mod
+          go-version: "1.24" # ATUALIZADO: Alinhado com seu go.mod
           cache: true
 
       - name: Install Dependencies
