@@ -18,17 +18,17 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: "1.21"
+          go-version: "1.25" # ATUALIZADO: Alinhado com seu go.mod
           cache: true
 
       - name: Install Dependencies
         run: go mod download
 
       - name: Run Linter (GolangCI-Lint)
-        uses: golangci/golangci-lint-action@v3
+        uses: golangci/golangci-lint-action@v6
         with:
           version: latest
-          # Opcional: só se o tempo limite estourar
+          # Importante: garante que o linter use a versão do Go instalada acima
           args: --timeout=5m
 
       - name: Run Tests
