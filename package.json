@@ -1,0 +1,35 @@
+{
+  "name": "monevo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "golangci-lint run",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tuliof210/monevo-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Tuliof210/monevo-api/issues"
+  },
+  "homepage": "https://github.com/Tuliof210/monevo-api#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.0",
+    "@commitlint/config-conventional": "^20.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7"
+  },
+  "lint-staged": {
+    "**/*.go": [
+      "gofmt -w",
+      "go mod tidy",
+      "golangci-lint run --fix"
+    ]
+  }
+}
