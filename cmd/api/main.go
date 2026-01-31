@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -16,5 +17,7 @@ func main() {
 		})
 	})
 
-	router.Run(":8080") // Roda na porta 8080
+	if err := router.Run(":8080"); err != nil {
+		log.Fatal("Falha ao iniciar o servidor: ", err)
+	}
 }
